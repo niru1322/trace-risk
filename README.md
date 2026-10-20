@@ -3,13 +3,7 @@
 
 > An autonomous 5-agent system that investigates company directors and calculates fraud risk without human intervention. Detects shell companies, fraud-linked directors, and distinguishes low-risk (TCS: 21/100) from high-risk (IL&FS: 81/100).
 
-[TRACE-RISK Banner](https://img.shields.io/badge/Status-Production%20Ready-brightgreen) [Agents](https://img.shields.io/badge/Agents-5%20Autonomous-blue) [Risk](https://img.shields.io/badge/Risk%20Formula-Patented-orange) [Python](https://img.shields.io/badge/Python-3.10%2B-blue)
-
 ---
-
-## 🚀 Live Demo
-
-**Professional Dashboard:** [Click here - Pro v2](https://trace-risk-demo.vercel.app) *(or run locally on port 3000)*
 
 **Demo Flow:**
 1. `TCS` → 23/100 LOW RISK - SAFE ✅
@@ -67,10 +61,6 @@ trace-risk/
 │   │   └── risk_calculator.py # Patent risk formula + past company mapping
 │   └── frontend/
 │       └── index.html         # Professional Dashboard v2 (port 3000)
-├── screenshots/
-│   ├── dashboard-low-risk.png
-│   ├── dashboard-high-risk.png
-│   └── graph-visual.png
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -144,15 +134,6 @@ python -m http.server 3000
 
 ---
 
-## 📸 Screenshots
-
-Add these to `/screenshots` folder:
-- `dashboard-low-risk.png` - TCS showing LOW RISK green
-- `dashboard-high-risk.png` - IL&FS showing HIGH RISK red
-- `graph-visual.png` - Knowledge graph with nodes
-
----
-
 ## 🎓 Patent & Resume Value
 
 **Patent Claim:** "A method for autonomous corporate risk assessment using multi-agent verification and temporal decay formula Risk = 0.5*History + 0.3*Decay + 0.2*Centrality"
@@ -181,7 +162,7 @@ MIT License - Free for educational use. Patent formula is for academic demonstra
 
 ## 👨‍💻 Author
 
-**Pranav** - [LinkedIn](https://linkedin.com/in/yourprofile) | [GitHub](https://github.com/yourusername)
+**Niranjan** - [LinkedIn](www.linkedin.com/in/niranjan-mane-8767bb332) | [GitHub](https://github.com/niru1322)
 
 Built in Oct 2026 as part of Autonomous AI Systems research.
 
