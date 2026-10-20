@@ -1,0 +1,8 @@
+tavily-python
+mistralai
+python-dotenv
+playwright
+beautifulsoup4
+networkx
+fastapi
+uvicorn
