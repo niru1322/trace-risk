@@ -1,3 +1,6 @@
+from fastapi.responses import FileResponse
+import os
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import re, json
@@ -55,3 +58,18 @@ def risk_api(company: str):
 
     overall = sum([r["risk"] for r in risk_list])//len(risk_list) if risk_list else 0
     return {"status":"VERIFIED","company":company,"directors":risk_list,"overall_risk":overall,"overall_level":"LOW RISK" if overall<40 else "MEDIUM RISK" if overall<70 else "HIGH RISK","confidence":88,"agents":5}
+
+
+# Serve frontend at root
+from fastapi.staticfiles import StaticFiles
+
+# Mount frontend folder
+if os.path.exists("frontend"):
+    app.mount("/frontend", StaticFiles(directory="frontend", html=True), name="frontend")
+
+@app.get("/")
+def serve_home():
+    frontend_path = os.path.join("frontend", "index.html")
+    if os.path.exists(frontend_path):
+        return FileResponse(frontend_path)
+    return {"message": "TRACE-RISK API is running. Go to /docs or /frontend/index.html"}
