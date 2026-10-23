@@ -73,3 +73,21 @@ def serve_home():
     if os.path.exists(frontend_path):
         return FileResponse(frontend_path)
     return {"message": "TRACE-RISK API is running. Go to /docs or /frontend/index.html"}
+
+# --- FIX FOR VERCEL: Serve Frontend ---
+BASE_DIR = os.path.dirname(__file__)
+
+@app.get("/")
+def home():
+    index_path = os.path.join(BASE_DIR, "frontend", "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return {"message": "TRACE-RISK API Live! Go to /docs or /frontend/index.html"}
+
+# Mount frontend static files
+try:
+    frontend_dir = os.path.join(BASE_DIR, "frontend")
+    if os.path.exists(frontend_dir):
+        app.mount("/frontend", StaticFiles(directory=frontend_dir, html=True), name="frontend")
+except:
+    pass
